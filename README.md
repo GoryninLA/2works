@@ -20,4 +20,12 @@
 - Protocol Buffers
 
 ##  Структура проекта
+project/
+│
+├── proto/
+│ └── service.proto
+├── server.py
+├── client.py
+├── requirements.txt
+└── README.md
 
