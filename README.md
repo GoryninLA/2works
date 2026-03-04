@@ -27,17 +27,21 @@
 
 # 3. Архитектура системы
 
-## Общая схема
-+----------------+ HTTP/2 + gRPC +----------------+
-| | <--------------------------> | |
-| CLIENT | | SERVER |
-| client.py | | server.py |
-| | | |
-+----------------+ +----------------+
-| |
-| uses | implements
-v v
-chat.proto (Protocol Buffers)
+
+```mermaid
+flowchart LR
+
+    Client["Client (client.py)"]
+    Server["Server (server.py)"]
+
+    gRPC["gRPC Framework\n(HTTP/2 Transport)"]
+    Proto["Protocol Buffers\n(.proto → serialization)"]
+
+    Client <-->|Bidirectional Streaming RPC| gRPC
+    Server <-->|Bidirectional Streaming RPC| gRPC
+
+    gRPC --> Proto
+```
 
 ## Компоненты системы
 
@@ -78,15 +82,15 @@ message ChatMessage {
   string message = 2;     // Текст сообщения
   string timestamp = 3;   // Время отправки
 }
-
-Пояснение
-stream перед типом — поток сообщений
-stream после returns — сервер тоже отправляет поток
-Нумерация полей обязательна в Protobuf```
+```
+**Пояснение**
+- stream перед типом — поток сообщений
+- stream после returns — сервер тоже отправляет поток
 
 ---
 
 # 5. Листинг chat.proto
+```
 import grpc
 from concurrent import futures
 import time
@@ -136,10 +140,11 @@ def serve():
 
 if __name__ == "__main__":
     serve()
-
+```
 ---
 
 # 6. Листинг chat.proto
+```
 import grpc
 import time
 import chat_pb2
@@ -174,7 +179,7 @@ def run():
 
 if __name__ == "__main__":
     run()
-
+```
 ---
 
 # 8. Выводы
