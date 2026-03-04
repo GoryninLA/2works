@@ -90,7 +90,9 @@ message ChatMessage {
 ---
 
 # 5. Листинг chat.proto
-```
+
+
+```python
 import grpc
 from concurrent import futures
 import time
