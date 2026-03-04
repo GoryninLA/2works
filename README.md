@@ -34,8 +34,8 @@ flowchart LR
     Client["Client (client.py)"]
     Server["Server (server.py)"]
 
-    gRPC["gRPC Framework\n(HTTP/2 Transport)"]
-    Proto["Protocol Buffers\n(.proto → serialization)"]
+    gRPC["gRPC Framework (HTTP/2 Transport)"]
+    Proto["Protocol Buffers (.proto → serialization)"]
 
     Client <-->|Bidirectional Streaming RPC| gRPC
     Server <-->|Bidirectional Streaming RPC| gRPC
