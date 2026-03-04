@@ -189,9 +189,8 @@ if __name__ == "__main__":
 ```
 ---
 # 7. Успешная работа сервера и клинета
-<img width="948" height="208" alt="image" src="https://github.com/user-attachments/assets/2eaca5ff-44ce-46f2-857e-f75f7dbc3d66" />
+<img width="952" height="190" alt="Снимок экрана 2026-03-04 в 11 54 02" src="https://github.com/user-attachments/assets/79a7adfb-32dd-424a-bf72-8679219fd6f8" />
 
-<img width="455" height="168" alt="Снимок экрана 2026-03-04 в 11 31 42" src="https://github.com/user-attachments/assets/65e1caa1-86b8-43f3-b43e-26e1efc81be3" />
 
 # 8. Выводы
 В ходе выполнения лабораторной работы я реализовал RPC-сервис с использованием gRPC и Protocol Buffers.
