@@ -29,7 +29,7 @@
 
 ---
 ## Архитектура инструментов PEST API с Nginx
-```marmaid
+```mermaid
 flowchart LR
     client[Клиент]
     nginx[Nginx]
