@@ -31,23 +31,16 @@
 ## Архитектура инструментов PEST API с Nginx
 ```mermaid
 flowchart LR
-    client[Клиент]
+    client[Клиент (curl / браузер)]
     nginx[Nginx]
-    cache[Кеш Nginx]
-    api[REST API (Flask)]
-    storage[Данные (в памяти)]
+    api[REST API (Flask / app.py)]
+    storage[Хранилище (в памяти)]
 
-    client --> nginx
-
-    nginx -->|GET| cache
-    cache -->|HIT (есть в кеше)| client
-
-    cache -->|MISS| api
-    nginx -->|POST/DELETE| api
-
-    api --> storage
-    api --> nginx
-    nginx --> client
+    client -->|HTTP запрос| nginx
+    nginx -->|proxy_pass| api
+    api -->|CRUD операции| storage
+    api -->|JSON ответ| nginx
+    nginx -->|HTTP ответ| client
 ```
 
 ## 4. Ход выполнения
