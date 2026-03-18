@@ -31,10 +31,10 @@
 ## Архитектура инструментов PEST API с Nginx
 ```mermaid
 flowchart LR
-    client[Клиент (curl / браузер)]
+    client[Клиент (curl / browser)]
     nginx[Nginx]
     api[REST API (Flask / app.py)]
-    storage[Хранилище (в памяти)]
+    storage[Srorege (in memory)]
 
     client -->|HTTP запрос| nginx
     nginx -->|proxy_pass| api
