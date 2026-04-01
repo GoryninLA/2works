@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package service;
+
+service MyService {
+  rpc ProcessLog (TextRequest) returns (JsonResponse);
+  rpc ShortenUrl (TextRequest) returns (TextResponse);
+  rpc DetectLanguage (TextRequest) returns (TextResponse);
+}
+
+message TextRequest {
+  string text = 1;
+}
+
+message TextResponse {
+  string result = 1;
+}
+
+message JsonResponse {
+  string json = 1;
+}
